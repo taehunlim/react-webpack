@@ -3,6 +3,9 @@ require('dotenv').config({ path: './env/dev.env' });
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
 
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+
 module.exports = merge(common, {
    mode: 'development',
    devtool: 'inline-source-map',
@@ -27,4 +30,8 @@ module.exports = merge(common, {
          },
       ],
    },
+   plugins: [
+      new ForkTsCheckerWebpackPlugin(),
+      new ErrorOverlayPlugin(),
+   ]
 });

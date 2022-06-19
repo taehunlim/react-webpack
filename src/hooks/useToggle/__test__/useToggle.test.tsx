@@ -3,7 +3,7 @@ import { renderHook, act } from "@testing-library/react";
 import useToggle from "../useToggle";
 
 test("update state from false to true when toggle is called", () => {
-    const { result } = renderHook((useToggle));
+    const { result } = renderHook(useToggle);
 
     expect(result.current.state).toBe(false);
 
