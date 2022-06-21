@@ -8,16 +8,19 @@
     "prod": "webpack-dev-server --progress --config webpack/webpack.prod.js",
     "build:dev": "webpack --watch --config webpack/webpack.dev.js",
     "build:prod": "webpack --watch --config webpack/webpack.prod.js",
-    "test": "jest --env=jsdom --coverage"
+    "test": "jest --env=jsdom --coverage --watch"
   },
   "dependencies": {
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
+    "@types/react-redux": "^7.1.24",
     "dotenv": "^16.0.1",
     "jest": "^28.1.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",
+    "redux": "^4.2.0",
     "typescript": "^4.7.3"
   },
   "devDependencies": {
