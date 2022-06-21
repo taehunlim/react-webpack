@@ -1,5 +1,5 @@
 import {
-    Tasks,
+    TasksProps,
 } from '../actions/actions';
 
 import {
@@ -9,7 +9,7 @@ import {
 } from '../actions/types';
 
 interface InitialState {
-    tasks: Tasks[];
+    tasks: TasksProps[];
 };
 
 type Action = {

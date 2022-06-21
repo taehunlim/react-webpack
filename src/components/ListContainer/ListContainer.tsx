@@ -1,14 +1,14 @@
 import React from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
+import useTypedSelector from "../../hooks/useTypedSelector";
 
 import {deleteTask} from '../../redux/actions/actions';
-import {RootState} from "../../redux/reducers";
 
 import List from "../List/List";
 
 const ListContainer = () => {
     const dispatch = useDispatch();
-    const tasks = useSelector((state: RootState) => {
+    const tasks = useTypedSelector((state) => {
         if(state.Reducer.tasks) {
             return state.Reducer.tasks
         } else {

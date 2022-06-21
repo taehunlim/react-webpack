@@ -3,14 +3,14 @@ import React from 'react';
 import {render, fireEvent} from "@testing-library/react";
 
 import List from "./List";
-import {Tasks} from "../../redux/actions/actions";
+import {TasksProps} from "../../redux/actions/actions";
 
 import tasks from "../../../fixtures/tasks";
 
 describe("List", () => {
     const handleClick = jest.fn();
 
-    function getTasks(tasks: Tasks[]) {
+    function getTasks(tasks: TasksProps[]) {
         return render(
             <List tasks={tasks} onClick={handleClick}/>
         );
