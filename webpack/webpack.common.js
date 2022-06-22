@@ -8,6 +8,11 @@ const dirname = './',
    PROJECT_ROOT = path.resolve(dirname),
    PUBLIC_INDEX = path.resolve(PROJECT_ROOT, 'public', 'index.html');
 
+console.log(process.env.NODE_ENV)
+
+const mode = process.env.WEBPACK_SERVE ? 'development' : 'production',
+    DEV = mode === 'development';
+
 rimraf.sync(path.resolve(PROJECT_ROOT, 'dist'));
 module.exports = {
    resolve: {
@@ -30,6 +35,9 @@ module.exports = {
    plugins: [
       new HtmlWebPackPlugin({
          template: PUBLIC_INDEX,
+         templateParameters: {
+            env: DEV ? '(개발)' : '',
+         },
       }),
       new webpack.DefinePlugin({
          'process.env': JSON.stringify(process.env),
