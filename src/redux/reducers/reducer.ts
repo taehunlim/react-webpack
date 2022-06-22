@@ -2,11 +2,7 @@ import {
     TasksProps,
 } from '../actions/actions';
 
-import {
-    SET_TASKS,
-    DELETE_TASK,
-    ActionType
-} from '../actions/types';
+import ActionType from '../actions/types';
 
 interface InitialState {
     tasks: TasksProps[];
@@ -22,15 +18,14 @@ const initialState = {
 };
 
 export default function Reducer(state: InitialState = initialState, action: Action) {
-    console.log(action.payload)
     switch (action.type) {
-        case SET_TASKS:
+        case ActionType.SET_TASKS:
             return {
                 ...state,
                 tasks: action.payload.tasks
             };
 
-        case DELETE_TASK:
+        case ActionType.DELETE_TASK:
             return {
                 ...state,
                 tasks: state.tasks.filter(task => task.id !== action.payload.id)

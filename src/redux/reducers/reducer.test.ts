@@ -1,12 +1,10 @@
 import reducer from './reducer';
 
 import {deleteTask, setTasks} from "../actions/actions";
-import {SET_TASKS, DELETE_TASK} from '../actions/types';
-
 import tasks from "../../../fixtures/tasks";
 
 describe('reducer', () => {
-    describe(SET_TASKS, () => {
+    describe("setTasks", () => {
         it('changes tasks array', () => {
             const initialState = {
                 tasks: []
@@ -19,7 +17,7 @@ describe('reducer', () => {
         });
     });
 
-    describe(DELETE_TASK, () => {
+    describe("deleteTask", () => {
         it('removes the task from tasks', () => {
             const initialState = {
                 tasks: [{id: 1, title: "title1"}]
