@@ -7,8 +7,11 @@ import {setTasks} from '../redux/actions/actions';
 
 import tasks from "../../fixtures/tasks";
 
+import img from '../assets/images/img.jpeg';
+
 
 const Home = () => {
+    console.log(img)
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(setTasks(tasks));
