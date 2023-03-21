@@ -1,11 +1,5 @@
-import React from 'react';
+import importAll from "routes";
 
-import {
-   Home,
-} from './index';
-
-const routes = [
-   { path: '/', element: <Home /> },
-];
+const routes = importAll(require.context("../pages", true, /\.tsx$/, "weak"));
 
 export { routes };

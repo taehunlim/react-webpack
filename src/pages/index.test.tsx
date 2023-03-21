@@ -2,7 +2,7 @@ import React from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 
-import Home from "./Home";
+import Home from ".";
 import tasks from "../../fixtures/tasks";
 import { render } from "@testing-library/react";
 
